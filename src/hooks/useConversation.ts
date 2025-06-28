@@ -18,5 +18,4 @@ const useConversation =()=>{
   }),[isOpen,conversationId])
 }
 
-
 export default useConversation;

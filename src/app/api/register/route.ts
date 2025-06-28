@@ -21,5 +21,4 @@ export async function POST(req: Request) {
          console.log(err);
          return new NextResponse('Internal Server Error', { status: 500 });
     }
-
 }

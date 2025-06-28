@@ -1,14 +1,14 @@
 'use client'
 import { useCallback, useEffect, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import Input from "./input/Input";
-import Button from "./input/button";
-import AuthSocialButton from "./Auth/AuthSocialButton";
+import Input from "../input/Input";
+import Button from "../input/button";
 import { BsGithub, BsGoogle } from "react-icons/bs";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import AuthSocialButton from "./AuthSocialButton";
 
 type variant = 'LOGIN' | 'REGISTER';
 
@@ -21,9 +21,7 @@ const AuthForm = () => {
     useEffect(()=>{
        if(session?.status==='authenticated'){
         router.push('/users');
-        console.log('Authenticated')
-       }
-       
+       }       
     },[session?.status,router])
 
     const toggleVariant = useCallback(() => {

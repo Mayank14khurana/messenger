@@ -1,5 +1,5 @@
 import getConversations from "@/actions/getConversations";
-import ConversationList from "@/components/converaations/ConversationList";
+import ConversationList from "@/components/conversations/ConversationList";
 import Sidebar from "@/components/Sidebar/Sidebar";
 
 export default async function ConversationLayout({ children }: { children: React.ReactNode }) {

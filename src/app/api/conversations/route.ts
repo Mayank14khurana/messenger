@@ -7,7 +7,7 @@ export async function POST(req:Request) {
        const body =await req.json();
        const {userId,isGroup,name,members}=body;
        if(!currentUser?.id || !currentUser?.email){
-        return new NextResponse("Unauthorized",{status:401});
+        return new NextResponse("Unauthorized",{status:403});
        }
        if(isGroup && (!members || members.length<2 || !name)){
         return new NextResponse("Invalid data",{status:400});

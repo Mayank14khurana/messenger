@@ -4,8 +4,9 @@ import { User } from "@prisma/client";
 import Image from "next/image";
 
 interface Props{
-    user:User
+  user:User
 }
+
 const Avatar:React.FC<Props> = ({user}) => {
   return (
     <div className="relative">
@@ -16,4 +17,4 @@ const Avatar:React.FC<Props> = ({user}) => {
   )
 }
 
-export default Avatar
+export default Avatar;

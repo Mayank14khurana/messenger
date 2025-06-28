@@ -1,4 +1,4 @@
-import AuthForm from "@/components/AuthForm"
+import AuthForm from "@/components/Auth/AuthForm"
 import Image from "next/image"
 
 const Home = () => {
