@@ -5,6 +5,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import Avatar from "../Avatar";
+import LoadingModal from "../Sidebar/LoadingModal";
 
 interface props{
     data:User
@@ -19,6 +20,10 @@ const UserBox:React.FC<props>= ({data}) => {
      }).then((data)=>router.push(`/conversations/${data.data.id}`)).finally(()=>setIsLoading(false))
    },[data,router]); 
    return (
+    <>
+    {
+      isLoading && <LoadingModal  />
+    }
     <div onClick={handleClick} className="w-full relative flex items-center space-x-3 bg-white p-3 hover:bg-neutral-100 rounded-lg transition cursor-pointer ">
       <Avatar user={data} />
       <div className="flex-1 min-w-0">
@@ -29,6 +34,7 @@ const UserBox:React.FC<props>= ({data}) => {
        </div>
       </div>
     </div>
+    </>
   )
 }
 

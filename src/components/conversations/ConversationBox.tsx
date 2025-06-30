@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useCallback, useMemo } from "react";
 import Avatar from "../Avatar";
 import { format } from "date-fns";
+import AvatarGroup from "../AvatarGroup";
 
 interface ConversationBoxProps {
   data: FullConversationType,
@@ -53,7 +54,9 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({ data, selected }) => 
    
   return (
     <div onClick={handleClick} className={clsx(`w-full relative flex items-center space-x-3 p-3 hover:bg-neutral-100 rounded-lg transition cursor-pointer`, selected?"bg-neutral-100":"bg-white")}>
-    <Avatar user={otherUser} />
+    {
+      data.isGroup ? (<AvatarGroup users={data.users} />):( <Avatar user={otherUser} />)
+    }
     <div className="min-w-0 flex-1">
       <div className="focus:outline-none">
        <div className="flex justify-between items-center mb-1 ">
